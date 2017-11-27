@@ -39,6 +39,13 @@
             "value_list": [],
             "default": "",
             "order": 2 
+        },
+        "verify_cert": {
+            "description": "verify certifcate",
+            "data_type": "boolean",
+            "required": false,
+            "default": true,
+            "order": 3
         }
     },
     "actions": [

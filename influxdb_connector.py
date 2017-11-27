@@ -140,7 +140,7 @@ class InfluxdbConnector(BaseConnector):
                             auth=(self._username, self._password),
                             json=data,
                             headers=headers,
-                            verify=config.get('verify_server_cert', False),
+                            verify=config.get('verify_server_cert', self._verify_cert),
                             params=params)
         except Exception as e:
             return RetVal(action_result.set_status( phantom.APP_ERROR, "Error Connecting to server. Details: {0}".format(str(e))), resp_json)
@@ -253,6 +253,7 @@ class InfluxdbConnector(BaseConnector):
         # Optional values should use the .get() function
         self._password = config.get('password')
         self._username = config.get('username')
+        self._verify_cert = config.get('verify_cert')
 
         return phantom.APP_SUCCESS
 
