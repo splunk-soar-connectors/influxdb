@@ -34,10 +34,10 @@
         },
         "password": {
             "description": "password for authentication",
-            "data_type": "string",
+            "data_type": "password",
             "required": false,
             "value_list": [],
-            "default": "password",
+            "default": "",
             "order": 2 
         }
     },
