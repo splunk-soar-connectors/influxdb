@@ -133,6 +133,7 @@ class InfluxdbConnector(BaseConnector):
         # Create a URL to connect to
         url = self._base_url + endpoint
         params['q'] = params.pop('query')
+        params['db'] = self._db
         try:
             r = request_func(
                             url,
@@ -253,6 +254,7 @@ class InfluxdbConnector(BaseConnector):
         # Optional values should use the .get() function
         self._password = config.get('password')
         self._username = config.get('username')
+        self._db = config.get('db')
         self._verify_cert = config.get('verify_cert')
 
         return phantom.APP_SUCCESS
