@@ -132,7 +132,7 @@ class InfluxdbConnector(BaseConnector):
 
         # Create a URL to connect to
         url = self._base_url + endpoint
-
+        params['q'] = params.pop('query')
         try:
             r = request_func(
                             url,
@@ -159,7 +159,7 @@ class InfluxdbConnector(BaseConnector):
 
         self.save_progress("Sending ping to endpoint /ping")
         # make rest call
-        ret_val, response = self._make_rest_call('/ping', action_result, params={"username": 'nouser', "password": 'nopassword'})
+        ret_val, response = self._make_rest_call('/ping', action_result, params={"username": '', "password": '', "query": ''})
 
         if (phantom.is_fail(ret_val)):
             # the call to the 3rd party device or service failed, action result should contain all the error details

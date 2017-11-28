@@ -40,12 +40,19 @@
             "default": "",
             "order": 2 
         },
+        "db": {
+            "description": "target database",
+            "data_type": "string",
+            "required": false,
+            "default": "",
+            "order": 3
+        },
         "verify_cert": {
             "description": "verify certifcate",
             "data_type": "boolean",
             "required": false,
             "default": true,
-            "order": 3
+            "order": 4
         }
     },
     "actions": [
@@ -68,7 +75,7 @@
             "type": "investigate",
             "read_only": false,
             "parameters": {
-                "q": {
+                "query": {
                     "description": "query",
                     "data_type": "string",
                     "required": true,
@@ -78,26 +85,11 @@
                     "value_list": [],
                     "default": "",
                     "order": 0
-                },
-                "db": {
-                    "description": "target database",
-                    "data_type": "string",
-                    "required": false,
-                    "primary": true,
-                    "contains": [],
-                    "value_list": [],
-                    "default": "",
-                    "order": 0
                 }
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.q",
-                    "data_type": "string",
-                    "contains": []
-                },
-                {
-                    "data_path": "action_result.parameter.db",
+                    "data_path": "action_result.parameter.query",
                     "data_type": "string",
                     "contains": []
                 },
