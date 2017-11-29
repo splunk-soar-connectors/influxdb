@@ -132,7 +132,8 @@ class InfluxdbConnector(BaseConnector):
 
         # Create a URL to connect to
         url = self._base_url + endpoint
-
+        params['q'] = params.pop('query')
+        params['db'] = self._db
         try:
             r = request_func(
                             url,
@@ -140,7 +141,7 @@ class InfluxdbConnector(BaseConnector):
                             auth=(self._username, self._password),
                             json=data,
                             headers=headers,
-                            verify=config.get('verify_server_cert', False),
+                            verify=config.get('verify_server_cert', self._verify_cert),
                             params=params)
         except Exception as e:
             return RetVal(action_result.set_status( phantom.APP_ERROR, "Error Connecting to server. Details: {0}".format(str(e))), resp_json)
@@ -159,7 +160,7 @@ class InfluxdbConnector(BaseConnector):
 
         self.save_progress("Sending ping to endpoint /ping")
         # make rest call
-        ret_val, response = self._make_rest_call('/ping', action_result, params={"username": 'nouser', "password": 'nopassword'})
+        ret_val, response = self._make_rest_call('/ping', action_result, params={"username": '', "password": '', "query": ''})
 
         if (phantom.is_fail(ret_val)):
             # the call to the 3rd party device or service failed, action result should contain all the error details
@@ -253,6 +254,8 @@ class InfluxdbConnector(BaseConnector):
         # Optional values should use the .get() function
         self._password = config.get('password')
         self._username = config.get('username')
+        self._db = config.get('db')
+        self._verify_cert = config.get('verify_cert')
 
         return phantom.APP_SUCCESS
 
