@@ -9,8 +9,8 @@
     "product_version_regex": ".*",
     "publisher": "Irek Romaniuk",
     "license": "Copyright Irek Romaniuk 2017",
-    "app_version": "1.0.0",
-    "utctime_updated": "2017-11-21T17:43:00.653522Z",
+    "app_version": "1.0.1",
+    "utctime_updated": "2017-11-30T22:46:21.000000Z",
     "package_name": "phantom_influxdb",
     "main_module": "influxdb_connector.py",
     "min_phantom_version": "3.0.265",
@@ -30,7 +30,7 @@
             "required": false,
             "value_list": [],
             "default": "admin",
-            "order": 1 
+            "order": 1
         },
         "password": {
             "description": "password for authentication",
@@ -38,7 +38,7 @@
             "required": false,
             "value_list": [],
             "default": "",
-            "order": 2 
+            "order": 2
         },
         "db": {
             "description": "target database",
@@ -81,7 +81,9 @@
                     "required": true,
                     "primary": true,
                     "contains": [],
-                    "example_values": ["SELECT * FROM \"cpu\" WHERE time > now() - 600s"],
+                    "example_values": [
+                        "SELECT * FROM \"cpu\" WHERE time > now() - 600s"
+                    ],
                     "value_list": [],
                     "default": "",
                     "order": 0
@@ -113,7 +115,7 @@
                     "data_type": "string",
                     "contains": [],
                     "column_name": "values",
-                    "column_order": 0 
+                    "column_order": 0
                 },
                 {
                     "data_path": "action_result.data.*.results.*.series.*.name",
