@@ -1,7 +1,7 @@
 {
     "appid": "64c9e711-9038-4929-81e3-e198fa6b4666",
     "name": "InfluxDB",
-    "description": "This app implements querying <b>InfluxDB</b> using the HTTP API.  InfluxDB is a time series database  meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics",
+    "description": "This app implements querying <b>InfluxDB</b> using the HTTP API",
     "type": "information",
     "product_vendor": "InfluxData",
     "logo": "influxdb.png",
@@ -13,7 +13,7 @@
     "utctime_updated": "2017-11-30T22:46:21.000000Z",
     "package_name": "phantom_influxdb",
     "main_module": "influxdb_connector.py",
-    "min_phantom_version": "3.0.265",
+    "min_phantom_version": "3.0.251",
     "app_wizard_version": "1.0.0",
     "configuration": {
         "base_url": {
@@ -71,7 +71,7 @@
             "action": "run query",
             "identifier": "run_query",
             "description": "Run a query on InfluxDB",
-            "verbose": "Use this action to run query on InfluxDB",
+            "verbose": "",
             "type": "investigate",
             "read_only": false,
             "parameters": {
