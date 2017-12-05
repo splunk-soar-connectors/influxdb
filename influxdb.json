@@ -1,7 +1,7 @@
 {
     "appid": "64c9e711-9038-4929-81e3-e198fa6b4666",
     "name": "InfluxDB",
-    "description": "This app implements querying <b>InfluxDB</b> using the HTTP API",
+    "description": "This app implements querying InfluxDB using the HTTP API",
     "type": "information",
     "product_vendor": "InfluxData",
     "logo": "influxdb.png",
@@ -36,8 +36,6 @@
             "description": "password for authentication",
             "data_type": "password",
             "required": false,
-            "value_list": [],
-            "default": "",
             "order": 2
         },
         "db": {
