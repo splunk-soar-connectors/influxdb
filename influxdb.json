@@ -1,7 +1,7 @@
 {
     "appid": "64c9e711-9038-4929-81e3-e198fa6b4666",
     "name": "InfluxDB",
-    "description": "This app implements querying <b>InfluxDB</b> using the HTTP API.  InfluxDB is a time series database  meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics",
+    "description": "This app implements querying <b>InfluxDB</b> using the HTTP API",
     "type": "information",
     "product_vendor": "InfluxData",
     "logo": "influxdb.png",
