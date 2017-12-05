@@ -71,7 +71,7 @@
             "action": "run query",
             "identifier": "run_query",
             "description": "Run a query on InfluxDB",
-            "verbose": "Use this action to run query on InfluxDB",
+            "verbose": "",
             "type": "investigate",
             "read_only": false,
             "parameters": {
